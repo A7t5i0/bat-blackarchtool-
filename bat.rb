@@ -11,7 +11,8 @@ def install
   installcommands = ['webapp', 'fuzzer', 'scanner', 'proxy', 'windows', 'dos', 'disassembler', 'cracker', 'voip', 'exploitation', 'recon', 'spoof', 'forensics', 'crypto', 'backdoor', 'networking', 'misc', 'defensive', 'wireless', 'automation', 'sniffer', 'binary', 'packer', 'reversing', 'mobile', 'malware', 'code-audit', 'social', 'honeypot', 'hardware', 'fingerprint', 'decompiler', 'config', 'debugger', 'firmware', 'bluetooth', 'database', 'automobile', 'nfc', 'tunnel', 'drone', 'unpacker', 'radio', 'keylogger', 'stego', 'scsanner', 'anti-forensics', 'ids', 'gpu']
   for installcommand in installcommands
     puts '>>>DOWNLOAD IN PROGRESS' + installcommand
-    exec installcommand
+    command = 'sudo pacman -S --noconfirm blackarch-' + installcommand
+    exec command
     puts '>>>DOWNLOAD COMPLETE!'
   end
 end
